@@ -1,114 +1,28 @@
 #include "main.h"
+/*
+ * File: 101-natural.c
+ * Auth: vincent kip
+ */
+
+#include <stdio.h>
 
 /**
- * print_thousand - print out the digit in the thousand spot
- * @sum: Value to scan for thousand spot
+ * main - Lists all the natural numbers below 1024 (excluded)
+ *        that are multiples of 3 or 5.
  *
- * Return: Void
+ * Return: Always 0.
  */
-static void print_thousand(int sum)
+int main(void)
 {
-	if (sum / 1000 == 0)
-	{
-		_putchar(32);
-	}
-	else
-	{
-		_putchar('0' + (sum / 1000));
-	}
-}
+	int i, sum = 0;
 
-
-/**
- * print_hundred - print out the digit in the hundred spot
- * @sum: Value to scan for hundred spot
- *
- * Return: Void
- */
-static void print_hundred(int sum)
-{
-	if (sum / 100 == 0)
+	for (i = 0; i < 1024; i++)
 	{
-		_putchar(32);
+		if ((i % 3) == 0 || (i % 5) == 0)
+			sum += i;
 	}
-	else
-	{
-		_putchar('0' + (sum / 100));
-	}
-}
 
+	printf("%d\n", sum);
 
-/**
- * print_tenth - print out the digit in the tenth spot
- * @sum: Value to scan for tenth spot
- *
- * Return: Void
- */
-static void print_tenth(int sum)
-{
-	if (sum / 10 == 0)
-	{
-		_putchar(32);
-	}
-	else
-	{
-		if ((sum / 10) > 9)
-		{
-			_putchar('0' + (sum / 10 % 10));
-		}
-		else
-		{
-			_putchar('0' + (sum / 10));
-		}
-	}
-}
-
-
-/**
- * print_base10 - print out the digit in the base10 spot
- * @sum: Value to scan for base10 spot
- *
- * Return: Void
- */
-static void print_base10(int sum)
-{
-	if (sum % 10 == 0)
-	{
-		_putchar('0');
-	}
-	else
-	{
-		_putchar('0' + (sum % 10));
-	}
-}
-
-/**
- * print_times_table - print out the 9 times table
- * @n: Valuse use to generate times tables.
- *
- * Return: void
- */
-void print_times_table(int n)
-{
-	int v, h;
-
-	if (n > 15)
-	{
-		return;
-	}
-	for (h = 0 ; h < n + 1 ; h++)
-	{
-		_putchar('0');
-		for (v = 1 ; v < n + 1 ; v++)
-		{
-			int sum = v * h;
-
-			_putchar(',');
-			print_thousand(sum);
-			print_hundred(sum);
-			print_tenth(sum);
-			print_base10(sum);
-		}
-		_putchar('\n');
-	}
+	return (0);
 }
