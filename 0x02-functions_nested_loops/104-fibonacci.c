@@ -1,65 +1,45 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * main - fibonacci <3
+ * print_fib - prints the first 50 Fibonacci numbers,
+ * starting with 1 and 2, followed by a new line.
+ * @len: the length of with the fib sequance should print to.
  *
- * Purpose - no hardcode
- *
- * Return:  (Success)
+ * Return: void
  */
-
-int main(void)
+void print_fib(int len)
 {
-	unsigned long int i;
-	unsigned long int bef = 1;
-	unsigned long int aft = 2;
-	unsigned long int l = 1000000000;
-	unsigned long int bef1;
-	unsigned long int bef2;
-	unsigned long int aft1;
-	unsigned long int aft2;
+	unsigned int target, i;
 
-	printf("%lu", bef);
+	unsigned int former_l, former_r,;
+	unsigned int latter_l, latter_r;
+	unsigned int fib_l, fib_r;
 
-	for (i = 1; i < 91; i++)
+	f = 1;
+	l = 2;
+	target = len - 2;
+	for (i = 0 ; i < target ; i++)
 	{
-		printf(", %lu", aft);
-		aft += bef;
-		bef = aft - bef;
+		fib = f + l;
+		printf("%d : ", i + 4);
+		printf("%.0Lf" , fib);
+		f = l;
+		l = fib;
+		if (i < target - 1)
+			printf("\n");
 	}
-
-	bef1 = (bef / l);
-	bef2 = (bef % l);
-	aft1 = (aft / l);
-	aft2 = (aft % l);
-
-	for (i = 92; i < 99; ++i)
-	{
-		printf(", %lu", aft1 + (aft2 / l));
-		printf("%lu", aft2 % l);
-		aft1 = aft1 + bef1;
-		bef1 = aft1 - bef1;
-		aft2 = aft2 + bef2;
-		bef2 = aft2 - bef2;
-	}
-	printf("\n");
-	return (0);
+	putchar('\n');
 }
 
 
-_putchar.c
-
-#include "main.h"
-#include <unistd.h>
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - Entry point,
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ *
+ * Return: Always 0 (sucess)
  */
-int _putchar(char c)
+int main(void)
 {
-	return (write(1, &c, 1));
+	print_fib(98);
+	return (0);
 }
