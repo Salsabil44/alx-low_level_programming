@@ -12,10 +12,12 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *tmp;
 	char *sep;
 
-	if (ht == NULL)
+	if (ht == 0)
+
 		return;
 
 	printf("{");
+
 	sep = "";
 
 	for (i = 0; i < ht->size; i++)

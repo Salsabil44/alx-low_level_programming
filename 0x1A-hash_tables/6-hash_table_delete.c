@@ -12,7 +12,8 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *tmp1;
 	hash_node_t *tmp2;
 
-	if (ht == 0)
+	if (ht == NULL)
+
 		return;
 
 	for (i = 0; i < ht->size; i++)
