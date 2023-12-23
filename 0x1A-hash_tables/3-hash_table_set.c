@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * hash_tabl_set - adds an element to the hash table
+ * hash_table_set - adds an element to the hash table
  * @ht: The hash table
  * @key: The key of the new element
  * @value: The value of the new element
@@ -11,9 +11,9 @@
  * Return: 1 on success, 0 on failure
  */
 int
-hash_tabl_set(hash_table_t *ht, const char *key, const char *value)
+hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = 0;
+	unsigned long int index = NULL;
 	hash_node_t *new_hash_node = NULL;
 	hash_node_t *tmp = NULL;
 
